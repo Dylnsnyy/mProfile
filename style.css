@@ -1,0 +1,229 @@
+/* Media Query untuk tampilan mobile */
+@media (min-width: 200px) and (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    header .profil-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button#darkModeToggle {
+        padding: 12px 12px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Reset margin dan padding bawaan */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #007BFF;
+    color: #333;
+    padding: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Keyframes untuk animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section, header, nav, footer {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header .profil-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    transition: transform 0.3s ease; /* Tambah transisi */
+}
+
+header .profil-pic:hover {
+    transform: scale(1.2); /* Zoom saat hover */
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section {
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+section ul li {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section ul li:hover {
+    transform: translateY(-10px); /* Efek mengangkat card */
+}
+
+header h1 {
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.5s ease;
+}
+
+nav a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #69b2ff;
+}
+
+nav.dark-mode {
+    background-color: #222;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-item p {
+    margin-top: 10px;
+}
+
+button#darkModeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color:#FFFF00;
+    border: none;
+    cursor: pointer;
+    padding: 16px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+button#darkModeToggle:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+button#darkModeToggle:active {
+    transform: scale(0.95);
+}
+
+/* Ganti icon saat dark mode aktif */
+body.dark-mode button#darkModeToggle {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+body.dark-mode button#darkModeToggle .fa-moon {
+    display: none;
+}
+
+body.dark-mode button#darkModeToggle .fa-sun {
+    display: inline-block;
+}
+
+footer {
+    text-align:center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 0px;
+}

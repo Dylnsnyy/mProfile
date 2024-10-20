@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Profil pribadi Sandy Yolanda, seorang programmer." />
+  <title>Profil Saya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css" /> <!-- Ini untuk menghubungkan file CSS -->
+</head>
+
+<body>
+
+  <button id="darkModeToggle">
+    <i class="fas fa-moon"></i> <!-- Ikon Matahari -->
+  </button>
+
+  <nav>
+    <ul>
+      <li><a href="#about">Tentang Saya</a></li>
+      <li><a href="#skills">Keterampilan</a></li>
+      <li><a href="#projects">Proyek Saya</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="img/Profile.png" alt="Gambar Profil" class="profil-pic" />
+    <h1>Halo, Nama Saya Sandy Yolanda</h1>
+  </header>
+
+  <section id="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya, Sandy Yolanda, adalah seorang kreator yang menggabungkan 
+      kemampuan analitis, teknologi, dan desain. Saya berpengalaman dalam robotik, 
+      desain grafis, dan pengembangan web. Selain itu, saya mampu memecahkan 
+      masalah dan mengatasi berbagai permasalahan IT untuk menghasilkan solusi 
+      yang inovatif dan adaptif. 
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Keterampilan</h2>
+    <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Proyek Saya</h2>
+    <div class="projects-grid">
+      <div class="project-item">
+        <img src="img/1.jpg" alt="Proyek 1" />
+        <p>Proyek 1: <a href="#">Deskripsi singkat</a></p>
+      </div>
+      <div class="project-item">
+        <img src="img/2.jpg" alt="Proyek 2" />
+        <p>Proyek 2: <a href="#">Deskripsi singkat</a></p>
+      </div>
+      <div class="project-item">
+        <img src="img/3.jpg" alt="Proyek 3" />
+        <p>Proyek 3: <a href="#">Deskripsi singkat</a></p>
+      </div>
+      <div class="project-item">
+        <img src="img/4.jpg" alt="Proyek 4" />
+        <p>Proyek 4: <a href="#">Deskripsi singkat</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak Saya</h2>
+    <p>Email: <a href="mailto:email@domain.com">sandy210620@gmail.com</a></p>
+    <p>Sosial Media:</p>
+    <ul>
+      <li><a href="https://github.com/Dylnsnyy">GitHub</a></li>
+      <li><a href="https://www.instagram.com/sndy_ylnda">Instagram</a></li>
+    </ul>
+  </section>
+
+  <script>
+    // Fungsi untuk dark mode
+    const toggleButton = document.getElementById('darkModeToggle');
+    const bodyElement = document.body;
+    const navElement = document.querySelector('nav');
+    const iconSun = toggleButton.querySelector('.fa-moon');
+    const iconMoon = document.createElement('i');
+    iconMoon.classList.add('fas', 'fa-sun');
+
+    toggleButton.addEventListener('click', () => {
+        bodyElement.classList.toggle('dark-mode');
+        navElement.classList.toggle('dark-mode');
+
+        if (bodyElement.classList.contains('dark-mode')) {
+            iconSun.style.display = 'none';
+            toggleButton.appendChild(iconMoon);
+        } else {
+            iconSun.style.display = 'inline-block';
+            iconMoon.remove();
+        }
+    });
+    
+    // Smooth scroll untuk navigasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+  </script>
+
+</body>
+
+</html>
+
+<footer>
+  <p>&copy; 2024 SANDY YOLANDA. Semua hak dilindungi.</p>
+</footer>
